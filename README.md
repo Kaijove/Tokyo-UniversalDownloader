@@ -18,6 +18,9 @@
 <img src="https://img.shields.io/badge/crafted_by-Kai_Jové-ff2d90.svg" alt="Crafted by Kai Jové" />
 <img src="https://img.shields.io/badge/built_with-%E2%99%A5-ff2d90.svg" alt="Built with love" />
 
+
+  <img src="docs/assets/logo.png" alt="Universal Downloader" width="200" />
+
   <br /><br />
 
   <strong>⚡ Fast</strong> &nbsp;•&nbsp;
