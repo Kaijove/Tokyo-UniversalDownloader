@@ -1,7 +1,5 @@
 <div align="center">
 
-  <img src="docs/assets/logo.png" alt="Universal Downloader" width="200" />
-
   <div align="center">
   <img src="banner.gif" alt="Tokyo Universal Downloader" width="100%" />
 </div>
