@@ -158,9 +158,10 @@ MIT — see [`LICENSE`](LICENSE). © 2026 Kai
 ---
 
 <div align="center">
-  <img src="docs/assets/cor.png" alt="Universal Downloader about dialog" width="850" />
 
 <h3>Made with ❤️ by Kai</h3>
+
+  <img src="docs/assets/cor.png" alt="Universal Downloader about dialog" width="850" />
 
 🌸 Inspired by Tokyo &nbsp;•&nbsp; ⚡ Built with modern tech &nbsp;•&nbsp; ❤️ Made with care
 
