@@ -9,9 +9,6 @@
   <h3>🌸 No Ads · No Limits · All Platforms · Infinite Downloads · Maximum Quality ✨</h3>
 </div>
   <p>A beautiful, fast and modern desktop downloader for video and audio from the web.</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/🌸-No_Ads_·_No_Limits_·_All_Platforms_·_Infinite_Downloads_·_Maximum_Quality-ff2d90.svg?style=for-the-badge" alt="Features" />
-</p>
   <br />
 
 <img src="https://img.shields.io/badge/%F0%9F%8C%B8_Tokyo-night-ff2d90.svg" alt="Tokyo night" />
@@ -31,7 +28,9 @@
 
 </div>
 
----
+<p align="center">
+  <img src="https://img.shields.io/badge/🌸-No_Ads_·_No_Limits_·_All_Platforms_·_Infinite_Downloads_·_Maximum_Quality-ff2d90.svg?style=for-the-badge" alt="Features" />
+</p>
 
 ## ✨ What is it
 
