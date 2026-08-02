@@ -2,9 +2,8 @@
 
   <img src="docs/assets/logo.png" alt="Universal Downloader" width="200" />
 
-  <h1>Universal Downloader</h1>
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=800&size=45&duration=3000&pause=1000&color=FF2D90&center=true&vCenter=true&width=600&lines=Tokyo+Downloader;Download+Anything.;Simply." alt="Tokyo Downloader" />
 
-  <p><strong>Download anything. Simply.</strong></p>
   <div align="center">
   <h3>🌸 No Ads · No Limits · All Platforms · Infinite Downloads · Maximum Quality ✨</h3>
 </div>
