@@ -7,7 +7,9 @@
   <div align="center">
   <h3>🌸 No Ads · No Limits · All Platforms · Infinite Downloads · Maximum Quality ✨</h3>
 </div>
-  <p>A beautiful, fast and modern desktop downloader for video and audio from the web.</p>
+ <div align="center">
+  <img src="docs/assets/logo.png" alt="Universal Downloader" width="200" />
+</div>
   <br />
 
 <img src="https://img.shields.io/badge/%F0%9F%8C%B8_Tokyo-night-ff2d90.svg" alt="Tokyo night" />
