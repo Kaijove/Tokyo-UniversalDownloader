@@ -158,7 +158,7 @@ MIT — see [`LICENSE`](LICENSE). © 2026 Kai
 
 <div align="center">
 
-<img src="docs/assets/cor.png" alt="Made with love" width="200" />
+<img src="docs/assets/cor.png" alt="Made with love" width="260" />
 
 <h3>Made with ❤️ by Kai</h3>
 
