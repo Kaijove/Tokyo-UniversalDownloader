@@ -14,7 +14,7 @@
 <img src="https://img.shields.io/badge/powered_by-yt--dlp-ff0000.svg" alt="Powered by yt-dlp" />
 <img src="https://img.shields.io/badge/audio_%2B_video-ffmpeg-007808.svg" alt="ffmpeg" />
 <img src="https://img.shields.io/badge/no_ads-100%25-22c55e.svg" alt="No ads" />
-<img src="https://img.shields.io/badge/made_in-Catalonia-yellow.svg" alt="Made in Catalonia" />
+<img src="https://img.shields.io/badge/crafted_by-Kai_Jové-ff2d90.svg" alt="Crafted by Kai Jové" />
 <img src="https://img.shields.io/badge/built_with-%E2%99%A5-ff2d90.svg" alt="Built with love" />
 
   <br /><br />
