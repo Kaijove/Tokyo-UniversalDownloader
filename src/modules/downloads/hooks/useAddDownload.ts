@@ -3,12 +3,17 @@ import { AppError, sanitizeUrl } from '@/core/engine';
 import { resolveMetadata } from '@/modules/metadata';
 import { settingsToRankingPreferences, useSettingsStore } from '@/modules/settings';
 import { useDownloadsStore } from '../stores/downloads.store';
+import { useEnqueueDownload } from './useEnqueueDownload';
 
 /**
  * Handles submitting a new URL. Sanitises it, then resolves rich metadata
  * through the metadata service (cache + ranking + lifecycle events). The UI
  * never touches the provider directly. Moves the store entry to `ready` or
  * `error`, surfacing a structured message on failure.
+ *
+ * Once metadata resolves, the best-ranked format is already selected, so we
+ * immediately prompt for a save location and enqueue — the user shouldn't
+ * need a second "Download" click just to pick a folder.
  */
 export function useAddDownload() {
   const [pending, setPending] = useState(false);
@@ -16,6 +21,7 @@ export function useAddDownload() {
   const setProbing = useDownloadsStore((s) => s.setProbing);
   const setReady = useDownloadsStore((s) => s.setReady);
   const setError = useDownloadsStore((s) => s.setError);
+  const { requestDownload } = useEnqueueDownload();
 
   const submit = useCallback(
     async (rawUrl: string) => {
@@ -39,6 +45,7 @@ export function useAddDownload() {
         const prefs = settingsToRankingPreferences(settings);
         const metadata = await resolveMetadata(url, id, prefs, settings.advanced.ytDlpPath);
         setReady(id, metadata);
+        void requestDownload(id);
       } catch (err) {
         const message =
           err instanceof AppError
@@ -51,7 +58,7 @@ export function useAddDownload() {
         setPending(false);
       }
     },
-    [add, setProbing, setReady, setError],
+    [add, setProbing, setReady, setError, requestDownload],
   );
 
   return { submit, pending };
