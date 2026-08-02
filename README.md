@@ -2,7 +2,7 @@
 
   <img src="docs/assets/logo.png" alt="Universal Downloader" width="200" />
 
-  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=800&size=45&duration=3000&pause=1000&color=FF2D90&center=true&vCenter=true&width=600&lines=Tokyo+Downloader;Download+Anything.;Simply." alt="Tokyo Downloader" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=200&section=header&text=Tokyo%20Downloader&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=35" alt="Tokyo Downloader" />
 
   <div align="center">
   <h3>🌸 No Ads · No Limits · All Platforms · Infinite Downloads · Maximum Quality ✨</h3>
