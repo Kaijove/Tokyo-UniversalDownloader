@@ -9,13 +9,13 @@
 
   <br />
 
-<a href="Universal%20Downloader_1.0.0_x64-setup.exe"><img src="https://img.shields.io/badge/download-.exe-ec4899.svg?logo=windows" alt="Download the latest .exe" /></a>
-<img src="https://img.shields.io/badge/Tauri-2-24C8DB.svg?logo=tauri" alt="Tauri 2" />
-<img src="https://img.shields.io/badge/React-18-61DAFB.svg?logo=react" alt="React 18" />
-<img src="https://img.shields.io/badge/TypeScript-5-3178C6.svg?logo=typescript" alt="TypeScript 5" />
-<img src="https://img.shields.io/badge/Rust-stable-000000.svg?logo=rust" alt="Rust" />
-<img src="https://img.shields.io/badge/tests-131%20passing-brightgreen.svg" alt="131 tests passing" />
-<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" />
+<img src="https://img.shields.io/badge/%F0%9F%8C%B8_Tokyo-night-ff2d90.svg" alt="Tokyo night" />
+<img src="https://img.shields.io/badge/platforms-1000+-ec4899.svg" alt="1000+ platforms" />
+<img src="https://img.shields.io/badge/powered_by-yt--dlp-ff0000.svg" alt="Powered by yt-dlp" />
+<img src="https://img.shields.io/badge/audio_%2B_video-ffmpeg-007808.svg" alt="ffmpeg" />
+<img src="https://img.shields.io/badge/no_ads-100%25-22c55e.svg" alt="No ads" />
+<img src="https://img.shields.io/badge/made_in-Catalonia-yellow.svg" alt="Made in Catalonia" />
+<img src="https://img.shields.io/badge/built_with-%E2%99%A5-ff2d90.svg" alt="Built with love" />
 
   <br /><br />
 
