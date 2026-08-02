@@ -50,7 +50,6 @@ Under the hood: **yt-dlp** + **FFmpeg**, wrapped in a **Tauri + Rust + React** d
 <div align="center">
   <img src="docs/assets/comfunciona.png" alt="How Universal Downloader works" width="850" />
   <br /><br />
-  <img src="docs/assets/cor.png" alt="Universal Downloader about dialog" width="850" />
 </div>
 
 1. 🔗 **Paste a link** — video, audio or playlist.
@@ -159,6 +158,7 @@ MIT — see [`LICENSE`](LICENSE). © 2026 Kai
 ---
 
 <div align="center">
+  <img src="docs/assets/cor.png" alt="Universal Downloader about dialog" width="850" />
 
 <h3>Made with ❤️ by Kai</h3>
 
