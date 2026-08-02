@@ -9,7 +9,7 @@
 
   <br />
 
-  <a href="../../releases/latest"><img src="https://img.shields.io/badge/download-.exe-ec4899.svg?logo=windows" alt="Download the latest .exe" /></a>
+  <a href="Universal%20Downloader_1.0.0_x64-setup.exe"><img src="https://img.shields.io/badge/download-.exe-ec4899.svg?logo=windows" alt="Download the latest .exe" /></a>
   <img src="https://img.shields.io/badge/Tauri-2-24C8DB.svg?logo=tauri" alt="Tauri 2" />
   <img src="https://img.shields.io/badge/React-18-61DAFB.svg?logo=react" alt="React 18" />
   <img src="https://img.shields.io/badge/TypeScript-5-3178C6.svg?logo=typescript" alt="TypeScript 5" />
@@ -36,7 +36,7 @@ Under the hood: **yt-dlp** + **FFmpeg** do the heavy lifting, wrapped in a **Tau
 
 ## 🚀 Download & try it
 
-> **Fastest way to test it:** grab the `.exe` from **[Releases](../../releases/latest)** and run it — no terminal, no dev setup, no build step.
+> **Fastest way to test it:** download **[`Universal Downloader_1.0.0_x64-setup.exe`](Universal%20Downloader_1.0.0_x64-setup.exe)** and run it — no terminal, no dev setup, no build step.
 
 If it reports `yt-dlp`/`ffmpeg` as missing, check [Requirements](#-requirements) below or `Settings → Developer` inside the app.
 
