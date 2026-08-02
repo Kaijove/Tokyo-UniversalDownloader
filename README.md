@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="docs/assets/logo.png" alt="Universal Downloader" width="500" />
+  <img src="docs/assets/logo.png" alt="Universal Downloader" width="200" />
 
   <h1>Universal Downloader</h1>
 
