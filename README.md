@@ -6,9 +6,9 @@
 
   <p><strong>Download anything. Simply.</strong></p>
   <p>A beautiful, fast and modern desktop downloader for video and audio from the web.</p>
-  <div align="center">
-  <strong>No Ads</strong> &nbsp;•&nbsp; <strong>No Limits</strong> &nbsp;•&nbsp; <strong>All Platforms</strong> &nbsp;•&nbsp; <strong>Infinite Downloads</strong> &nbsp;•&nbsp; <strong>Maximum Quality</strong> &nbsp;🌸✨
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/🌸-No_Ads_·_No_Limits_·_All_Platforms_·_Infinite_Downloads_·_Maximum_Quality-ff2d90.svg?style=for-the-badge" alt="Features" />
+</p>
   <br />
 
 <img src="https://img.shields.io/badge/%F0%9F%8C%B8_Tokyo-night-ff2d90.svg" alt="Tokyo night" />
