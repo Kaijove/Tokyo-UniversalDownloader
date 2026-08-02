@@ -9,13 +9,13 @@
 
   <br />
 
-  <a href="Universal%20Downloader_1.0.0_x64-setup.exe"><img src="https://img.shields.io/badge/download-.exe-ec4899.svg?logo=windows" alt="Download the latest .exe" /></a>
-  <img src="https://img.shields.io/badge/Tauri-2-24C8DB.svg?logo=tauri" alt="Tauri 2" />
-  <img src="https://img.shields.io/badge/React-18-61DAFB.svg?logo=react" alt="React 18" />
-  <img src="https://img.shields.io/badge/TypeScript-5-3178C6.svg?logo=typescript" alt="TypeScript 5" />
-  <img src="https://img.shields.io/badge/Rust-stable-000000.svg?logo=rust" alt="Rust" />
-  <img src="https://img.shields.io/badge/tests-131%20passing-brightgreen.svg" alt="131 tests passing" />
-  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" />
+<a href="Universal%20Downloader_1.0.0_x64-setup.exe"><img src="https://img.shields.io/badge/download-.exe-ec4899.svg?logo=windows" alt="Download the latest .exe" /></a>
+<img src="https://img.shields.io/badge/Tauri-2-24C8DB.svg?logo=tauri" alt="Tauri 2" />
+<img src="https://img.shields.io/badge/React-18-61DAFB.svg?logo=react" alt="React 18" />
+<img src="https://img.shields.io/badge/TypeScript-5-3178C6.svg?logo=typescript" alt="TypeScript 5" />
+<img src="https://img.shields.io/badge/Rust-stable-000000.svg?logo=rust" alt="Rust" />
+<img src="https://img.shields.io/badge/tests-131%20passing-brightgreen.svg" alt="131 tests passing" />
+<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" />
 
   <br /><br />
 
