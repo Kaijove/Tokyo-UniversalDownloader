@@ -53,7 +53,6 @@ If it reports `yt-dlp`/`ffmpeg` as missing, check [Requirements](#-requirements)
 <div align="center">
   <img src="docs/assets/comfunciona.png" alt="How Universal Downloader works" width="850" />
   <br /><br />
-  <img src="docs/assets/cor.png" alt="Universal Downloader about dialog" width="850" />
 </div>
 
 1. 🔗 **Paste a link** — video, audio or playlist.
@@ -171,6 +170,8 @@ MIT — see [`LICENSE`](LICENSE). © 2026 Kai
 <div align="center">
 
 <h3>Made with ❤️ by Kai</h3>
+
+  <img src="docs/assets/cor.png" alt="Universal Downloader about dialog" width="850" />
 
 🌸 Inspired by Tokyo &nbsp;•&nbsp; ⚡ Built with modern tech &nbsp;•&nbsp; ❤️ Made with care
 
