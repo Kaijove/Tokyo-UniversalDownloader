@@ -9,6 +9,7 @@
 
   <br />
 
+  <a href="../../releases/latest"><img src="https://img.shields.io/badge/download-.exe-ec4899.svg?logo=windows" alt="Download the latest .exe" /></a>
   <img src="https://img.shields.io/badge/Tauri-2-24C8DB.svg?logo=tauri" alt="Tauri 2" />
   <img src="https://img.shields.io/badge/React-18-61DAFB.svg?logo=react" alt="React 18" />
   <img src="https://img.shields.io/badge/TypeScript-5-3178C6.svg?logo=typescript" alt="TypeScript 5" />
@@ -29,13 +30,15 @@
 
 ## ✨ What is it
 
-Universal Downloader turns downloading media from the web into a **paste-and-go** experience — no terminal, no `yt-dlp` flags to memorize. Paste a link, pick a quality, and download.
+Universal Downloader turns downloading media from the web into a **paste-and-go** experience — no terminal, no `yt-dlp` flags to memorize. Paste a link, pick a quality, hit download.
 
-Under the hood: **yt-dlp** + **FFmpeg**, wrapped in a **Tauri + Rust + React** desktop app.
+Under the hood: **yt-dlp** + **FFmpeg** do the heavy lifting, wrapped in a **Tauri + Rust + React** desktop app with a hand-built, Tokyo-inspired interface.
 
-## 🚀 Try it instantly
+## 🚀 Download & try it
 
-**Windows:** just run the `.exe` — no dev environment needed. If it says `yt-dlp`/`ffmpeg` is missing, see [Requirements](#-requirements) or `Settings → Developer`.
+> **Fastest way to test it:** grab the `.exe` from **[Releases](../../releases/latest)** and run it — no terminal, no dev setup, no build step.
+
+If it reports `yt-dlp`/`ffmpeg` as missing, check [Requirements](#-requirements) below or `Settings → Developer` inside the app.
 
 ## 👀 Preview
 
@@ -61,6 +64,10 @@ Under the hood: **yt-dlp** + **FFmpeg**, wrapped in a **Tauri + Rust + React** d
 6. ⏯️ **Full control** — pause, resume, cancel or retry any download.
 7. 🕘 **History** — every finished download is kept and searchable.
 
+## 🌍 Supported sites
+
+Native fast-path detection for **YouTube, Vimeo, Twitch, Dailymotion and SoundCloud** — everything else falls back to `yt-dlp`'s own extractors, which cover **1000+ sites** (Instagram, TikTok, X/Twitter, Facebook, Twitch clips, podcasts, and more).
+
 ## 🎯 Features
 
 | | |
@@ -68,10 +75,12 @@ Under the hood: **yt-dlp** + **FFmpeg**, wrapped in a **Tauri + Rust + React** d
 | 🔗 Paste-and-go | Drop a link, metadata resolves automatically |
 | 🎞️ Media preview | Thumbnail, title, uploader, duration, formats |
 | 🎚️ Quality presets | Best · Compatible · Smallest · Audio · Custom |
-| 📥 Real download queue | Configurable concurrency, auto-starts next in line |
+| 💬 Subtitles | Download or embed, including auto-generated ones |
+| 📥 Real download queue | Configurable concurrency, next item auto-starts |
 | 📈 Live progress | Percentage, speed, ETA, current stage |
 | ⏯️ Pause / resume / cancel / retry | Full control per download, with retry backoff |
 | 🕘 Searchable history | Never lose track of what you downloaded |
+| 📎 Playlist file support | Open/associate `.m3u` / `.m3u8` files directly |
 | 🖥️ Desktop integration | Tray, start at login, drag & drop, clipboard watch, notifications |
 | 🩺 Diagnostics | Inspect detected `yt-dlp`/`ffmpeg` versions and logs |
 | 🎨 Animated UI | Tokyo-inspired design, smooth motion throughout |
@@ -80,14 +89,15 @@ Under the hood: **yt-dlp** + **FFmpeg**, wrapped in a **Tauri + Rust + React** d
 
 | Layer | Technology |
 |---|---|
-| 🦀 Backend | Rust |
-| 🖥️ Desktop | Tauri 2 |
+| 🦀 Backend | Rust (stable) |
+| 🖥️ Desktop shell | Tauri 2 |
 | ⚛️ Frontend | React 18 + TypeScript 5 |
-| ⚡ Build | Vite 5 |
-| 🧠 State | Zustand |
-| 🎨 Styling | Tailwind CSS + Framer Motion |
-| 📥 Engine | yt-dlp + FFmpeg |
-| 🧪 Testing | Vitest (131 tests) |
+| ⚡ Build tool | Vite 5 |
+| 🧠 State management | Zustand 5 |
+| 🎨 Styling & motion | Tailwind CSS + Framer Motion |
+| 📥 Download engine | yt-dlp + FFmpeg |
+| 🧩 Icons | Lucide |
+| 🧪 Testing | Vitest — 131 tests across 18 files |
 
 <details>
 <summary>🏛️ Project structure</summary>
