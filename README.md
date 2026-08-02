@@ -2,7 +2,7 @@
 
   <img src="docs/assets/logo.png" alt="Universal Downloader" width="200" />
   
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20,24&height=220&section=header&text=Tokyo%20Downloader&fontSize=65&fontColor=ffffff&animation=fadeIn&fontAlignY=32&desc=🌸%20Download%20anything.%20Simply.%20🌸&descSize=20&descAlignY=55" alt="Tokyo Downloader" />
+<img src="https://capsule-render.vercel.app/api?type=cylinder&color=gradient&customColorList=12,20,24&height=180&section=header&text=🌸%20Tokyo%20Downloader%20🌸&fontSize=45&fontColor=ffffff&animation=fadeIn" alt="Tokyo Downloader" />
 
   <div align="center">
   <h3>🌸 No Ads · No Limits · All Platforms · Infinite Downloads · Maximum Quality ✨</h3>
