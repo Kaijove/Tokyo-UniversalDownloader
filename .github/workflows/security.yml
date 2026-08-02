@@ -1,0 +1,65 @@
+name: Security
+
+# Dependency vulnerability audits for both ecosystems. Runs on dependency
+# changes, on PRs, and weekly so freshly-disclosed advisories surface even
+# without a code change.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'src-tauri/Cargo.toml'
+      - 'src-tauri/Cargo.lock'
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'
+
+concurrency:
+  group: security-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  npm-audit:
+    name: npm audit
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Fail only on high/critical advisories: moderate ones shouldn't block a
+      # merge but are visible in the log.
+      - name: Audit dependencies
+        run: pnpm audit --audit-level high
+
+  cargo-audit:
+    name: cargo audit
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install cargo-audit
+        run: cargo install cargo-audit --locked
+
+      - name: Audit Rust dependencies
+        working-directory: src-tauri
+        run: cargo audit

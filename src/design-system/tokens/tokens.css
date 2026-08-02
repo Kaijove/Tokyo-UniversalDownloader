@@ -1,0 +1,96 @@
+/**
+ * Design tokens — single source of truth.
+ * Semantic names only; components never reference raw color values.
+ * Values are HSL channels so Tailwind can apply opacity via <alpha-value>.
+ *
+ * Aesthetic: Tokyo night — deep ink surfaces, neon-pink accent, subtle
+ * lavender support. Pink is an accent, never a wash.
+ */
+
+:root {
+  /* ── Surfaces (deep, cool ink — never pure black) ── */
+  --background: 258 24% 7%;
+  --surface: 258 20% 10%;
+  --surface-secondary: 257 18% 13%;
+  --surface-elevated: 256 17% 16%;
+  --overlay: 260 30% 4%;
+
+  /* ── Borders ── */
+  --border: 257 15% 20%;
+  --border-hover: 320 40% 40%;
+
+  /* ── Brand / primary (neon pink) ── */
+  --primary: 328 90% 62%;
+  --primary-hover: 328 92% 68%;
+  --primary-active: 328 88% 56%;
+  --primary-foreground: 0 0% 100%;
+
+  /* ── Accent (lavender support — used sparingly) ── */
+  --accent: 268 78% 70%;
+
+  /* ── Status ── */
+  --success: 158 64% 50%;
+  --warning: 38 92% 60%;
+  --danger: 352 80% 62%;
+  --info: 268 78% 70%;
+
+  /* ── Text ── */
+  --text-primary: 320 20% 98%;
+  --text-secondary: 265 12% 74%;
+  --text-tertiary: 262 10% 54%;
+  --text-disabled: 260 8% 38%;
+
+  /* ── Interaction ── */
+  --muted: 257 14% 18%;
+  --selection: 328 90% 62%;
+  --focus-ring: 328 95% 70%;
+
+  /* ── Radius (soft, rounded) ── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-full: 9999px;
+
+  /* ── Elevation (deep, with a faint pink cast on large surfaces) ── */
+  --shadow-sm: 0 1px 2px 0 hsl(260 40% 2% / 0.5);
+  --shadow-md: 0 4px 14px -2px hsl(260 40% 2% / 0.55);
+  --shadow-lg: 0 14px 32px -6px hsl(260 40% 2% / 0.6);
+  --shadow-xl: 0 26px 60px -12px hsl(328 60% 8% / 0.55);
+
+  /* ── Signature glow (accent surfaces only) ── */
+  --glow-primary: 0 0 24px -4px hsl(328 90% 62% / 0.45);
+}
+
+/* ── Light theme (soft daylight — pink stays the accent) ── */
+:root[data-theme='light'] {
+  --background: 300 30% 99%;
+  --surface: 0 0% 100%;
+  --surface-secondary: 300 24% 97%;
+  --surface-elevated: 0 0% 100%;
+  --overlay: 280 20% 20%;
+
+  --border: 300 16% 90%;
+  --border-hover: 328 50% 72%;
+
+  --primary: 328 82% 56%;
+  --primary-hover: 328 84% 50%;
+  --primary-active: 328 80% 46%;
+  --primary-foreground: 0 0% 100%;
+
+  --accent: 268 70% 60%;
+
+  --text-primary: 265 24% 14%;
+  --text-secondary: 262 10% 40%;
+  --text-tertiary: 260 8% 56%;
+  --text-disabled: 260 8% 72%;
+
+  --muted: 300 20% 94%;
+
+  --shadow-sm: 0 1px 2px 0 hsl(280 20% 40% / 0.12);
+  --shadow-md: 0 4px 14px -2px hsl(280 20% 40% / 0.14);
+  --shadow-lg: 0 14px 32px -6px hsl(280 20% 40% / 0.16);
+  --shadow-xl: 0 26px 60px -12px hsl(328 40% 50% / 0.18);
+
+  --glow-primary: 0 0 20px -4px hsl(328 82% 56% / 0.35);
+}

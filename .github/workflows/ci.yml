@@ -1,0 +1,128 @@
+name: CI
+
+# Fast feedback on every push and pull request: type-check, lint, tests, and a
+# Rust check + clippy. A full Tauri bundle is built once (on Linux) to prove the
+# app compiles end to end, without publishing anything.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Cancel superseded runs on the same ref so a new push stops the old build.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  # Keep the toolchain lean and deterministic.
+  CARGO_TERM_COLOR: always
+
+jobs:
+  # ---- Frontend: type-check, lint, unit tests --------------------------------
+  frontend:
+    name: Frontend (types, lint, tests)
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type-check
+        run: pnpm typecheck
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Unit tests
+        run: pnpm test:run
+
+  # ---- Backend: cargo check + clippy -----------------------------------------
+  backend:
+    name: Backend (cargo check, clippy)
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+
+      - name: Cache cargo build
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Install Tauri system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev \
+            libgtk-3-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            patchelf
+
+      - name: cargo check
+        working-directory: src-tauri
+        run: cargo check --locked
+
+      - name: cargo clippy
+        working-directory: src-tauri
+        run: cargo clippy --locked -- -D warnings
+
+  # ---- Verify the full Tauri build compiles (no publish) ---------------------
+  build:
+    name: Verify Tauri build
+    runs-on: ubuntu-22.04
+    needs: [frontend, backend]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo build
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Install Tauri system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev \
+            libgtk-3-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            patchelf
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build app (bundles disabled — compile check only)
+        run: pnpm tauri build --no-bundle

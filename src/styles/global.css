@@ -1,0 +1,95 @@
+@import url('https://rsms.me/inter/inter.css');
+@import url('https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css');
+@import '../design-system/tokens/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--text-primary));
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+::selection {
+  background: hsl(var(--selection) / 0.3);
+}
+
+/* Visible focus only for keyboard users. */
+:focus-visible {
+  outline: 2px solid hsl(var(--focus-ring));
+  outline-offset: 2px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Respect reduced-motion at the platform level as a safety net. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Subtle text shadow for headings over the background image, so they stay
+   crisp regardless of what's behind them. */
+.text-shadow-glow {
+  text-shadow: 0 2px 20px hsl(var(--overlay) / 0.6);
+}
+
+/* Thin, discreet scrollbar for the compact downloads section. */
+.sakura-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.sakura-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sakura-scroll::-webkit-scrollbar-thumb {
+  background: hsl(328 60% 50% / 0.4);
+  border-radius: 9999px;
+}
+.sakura-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(328 70% 55% / 0.6);
+}
+
+/* Animated gradient sweep for the hero's "Simply." — a slow, elegant shimmer
+   travelling through the letters. Disabled under reduced motion. */
+.hero-shimmer {
+  background-size: 200% auto;
+  animation: hero-shimmer 6s linear infinite;
+}
+@keyframes hero-shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-shimmer {
+    animation: none;
+  }
+}

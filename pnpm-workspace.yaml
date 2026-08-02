@@ -1,0 +1,9 @@
+# Single-package repo (no workspaces), but this file also carries pnpm settings.
+packages:
+  - '.'
+
+# Allow esbuild (used by Vite) to run its post-install build script.
+# pnpm 10+ blocks dependency build scripts by default; without this entry,
+# `pnpm install` exits with ERR_PNPM_IGNORED_BUILDS.
+allowBuilds:
+  esbuild: true

@@ -1,0 +1,99 @@
+name: Quality
+
+# Code-health checks that complement CI: formatting, test coverage, and a few
+# hygiene gates (leftover TODO/FIXME markers, oversized files). These are kept
+# separate from CI so the core gate stays fast and this can evolve independently.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  format:
+    name: Formatting
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check formatting
+        run: pnpm format:check
+
+  coverage:
+    name: Test coverage
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run tests with coverage
+        run: pnpm test:coverage
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage
+          if-no-files-found: ignore
+
+  hygiene:
+    name: Code hygiene
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      # Fail if TODO/FIXME/HACK markers slip into shipped source. Comments in
+      # workflows or docs are fine; we only scan app source.
+      - name: Check for leftover TODO/FIXME markers
+        run: |
+          if grep -rniE "(TODO|FIXME|HACK|XXX)" src src-tauri/src \
+              --include="*.ts" --include="*.tsx" --include="*.rs"; then
+            echo "::error::Leftover TODO/FIXME/HACK markers found in source."
+            exit 1
+          fi
+          echo "No leftover markers."
+
+      # Flag unusually large source files, which usually want splitting. This is
+      # a warning, not a hard failure, so it never blocks a legitimate big file.
+      - name: Warn on oversized source files
+        run: |
+          large=$(find src src-tauri/src -type f \
+            \( -name "*.ts" -o -name "*.tsx" -o -name "*.rs" \) \
+            -size +40k)
+          if [ -n "$large" ]; then
+            echo "::warning::Large source files (>40 KB) — consider splitting:"
+            echo "$large"
+          else
+            echo "No oversized source files."
+          fi

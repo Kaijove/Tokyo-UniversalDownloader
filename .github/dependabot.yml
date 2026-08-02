@@ -1,0 +1,43 @@
+version: 2
+
+# Automated dependency update PRs across the three ecosystems this repo uses.
+# Grouped and rate-limited so they arrive as a manageable weekly batch rather
+# than a flood of individual PRs.
+
+updates:
+  # Frontend (pnpm / npm registry).
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      # One PR for all non-major updates keeps the noise down.
+      minor-and-patch:
+        update-types: [minor, patch]
+    commit-message:
+      prefix: 'deps'
+
+  # Rust backend.
+  - package-ecosystem: cargo
+    directory: '/src-tauri'
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+    commit-message:
+      prefix: 'deps(rust)'
+
+  # The GitHub Actions used by these workflows.
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'ci'

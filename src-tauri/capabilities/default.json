@@ -1,0 +1,41 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Default capability set for the main window.",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "core:default",
+    "core:window:allow-minimize",
+    "core:window:allow-unminimize",
+    "core:window:allow-hide",
+    "core:window:allow-show",
+    "core:window:allow-close",
+    "window-state:allow-save-window-state",
+    "shell:allow-execute",
+    "shell:allow-spawn",
+    "dialog:allow-open",
+    "store:allow-get",
+    "store:allow-set",
+    "store:allow-save",
+    "store:allow-load",
+    "store:allow-entries",
+    "opener:allow-open-path",
+    "notification:default",
+    "notification:allow-notify",
+    "notification:allow-is-permission-granted",
+    "notification:allow-request-permission",
+    "fs:allow-read-text-file",
+    "fs:default",
+    "clipboard-manager:allow-read-text",
+    "os:allow-platform",
+    "os:allow-arch",
+    "os:allow-version",
+    "process:allow-restart",
+    "updater:default",
+    "autostart:allow-enable",
+    "autostart:allow-disable",
+    "autostart:allow-is-enabled"
+  ]
+}

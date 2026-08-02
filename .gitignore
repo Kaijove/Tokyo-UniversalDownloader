@@ -1,0 +1,32 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+*.local
+
+# Editor / OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Rust / Tauri
+src-tauri/target
+src-tauri/gen/schemas
+
+# Logs
+*.log
+
+# Test coverage
+coverage
+
+# Build artifacts
+*.exe
+*.msi
