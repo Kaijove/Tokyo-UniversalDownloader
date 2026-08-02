@@ -398,6 +398,10 @@ The design is built around a modern Tokyo-inspired visual identity with a strong
 
 ---
 
+## 🧪 Vitest
+
+---
+
 # 🏛️ Architecture
 
 The project separates the user interface from the core application logic.
@@ -457,166 +461,277 @@ src/
 └── styles/
     └── Global CSS
 
-
 src-tauri/
 └── src/
     ├── lib.rs
     ├── commands.rs
     ├── diagnostics.rs
     └── tray.rs
-Design principle
+```
 
-Business logic never lives inside UI components.
+### Design principle
+
+> **Business logic never lives inside UI components.**
 
 The application logic belongs inside hooks, services and stores, keeping the interface easier to maintain and extend.
 
-📦 Requirements
+---
+
+# 📦 Requirements
 
 For development, you need:
 
-Node.js 20+
-pnpm 9+
-Rust stable
-Tauri prerequisites for your operating system
-yt-dlp
-FFmpeg
-Windows
+* Node.js 20+
+* pnpm 9+
+* Rust stable
+* Tauri prerequisites for your operating system
+* yt-dlp
+* FFmpeg
+
+### Windows
+
+```powershell
 winget install yt-dlp.yt-dlp Gyan.FFmpeg
-macOS
+```
+
+### macOS
+
+```bash
 brew install yt-dlp ffmpeg
-Linux
+```
+
+### Linux
 
 Use your distribution's package manager, or for example:
 
+```bash
 pipx install yt-dlp
 apt install ffmpeg
+```
 
-The application also searches common installation locations, so yt-dlp and ffmpeg can often be detected even when a GUI application does not inherit the same PATH as your terminal.
+The application also searches common installation locations, so `yt-dlp` and `ffmpeg` can often be detected even when a GUI application does not inherit the same `PATH` as your terminal.
 
 If necessary, explicit paths can be configured through:
 
-Settings → Developer
+**Settings → Developer**
 
-🚀 Installation
-Windows — easiest way
+---
 
-If a pre-built .exe is available, simply launch it.
+# 🚀 Installation
+
+## Windows — easiest way
+
+If a pre-built `.exe` is available, simply launch it.
 
 No source code setup is required to try the application.
 
-🛠️ Development installation
+---
+
+# 🛠️ Development installation
 
 Clone the repository and install the dependencies:
 
+```bash
 pnpm install
+```
 
 Then start the application in development mode:
 
+```bash
 pnpm tauri dev
-🧪 Development commands
-Type checking
+```
+
+---
+
+# 🧪 Development commands
+
+### Type checking
+
+```bash
 pnpm typecheck
-Linting
+```
+
+### Linting
+
+```bash
 pnpm lint
-Tests
+```
+
+### Tests
+
+```bash
 pnpm test:run
-Complete verification
+```
+
+### Complete verification
+
+```bash
 pnpm check
-Project diagnostics
+```
+
+### Project diagnostics
+
+```bash
 pnpm doctor
-🏭 Build
+```
+
+---
+
+# 🏭 Build
 
 To create a production build:
 
+```bash
 pnpm tauri build
+```
 
 This generates the appropriate installer/bundle for the current operating system.
 
-⚙️ Configuration
+---
+
+# ⚙️ Configuration
 
 Universal Downloader includes a dedicated Settings interface.
 
 Settings are organized into:
 
-General
+### General
 
 Everyday application behaviour and preferences.
 
-Advanced
+### Advanced
 
 More detailed download behaviour and options.
 
-Developer
+### Developer
 
-Technical configuration, diagnostics and explicit paths for external tools such as yt-dlp and ffmpeg.
+Technical configuration, diagnostics and explicit paths for external tools such as `yt-dlp` and `ffmpeg`.
 
-📚 Documentation
+---
 
-More detailed documentation is available inside the docs/ directory.
+# 📚 Documentation
 
-Document	Description
-installation.md	Installation instructions
-development.md	Development workflow
-build.md	Building and packaging
-architecture.md	Project architecture
-settings.md	Settings and download options
-download-engine.md	Queue, progress, retries and phases
-metadata-engine.md	Metadata detection, ranking and caching
-desktop-integration.md	Tray, clipboard, notifications and updater
-troubleshooting.md	Common problems and solutions
-faq.md	Frequently asked questions
-🩹 Troubleshooting
+More detailed documentation is available inside the `docs/` directory.
 
-If a download fails immediately, the first thing to check is whether yt-dlp and ffmpeg are correctly installed and detected.
+| Document                 | Description                                |
+| ------------------------ | ------------------------------------------ |
+| `installation.md`        | Installation instructions                  |
+| `development.md`         | Development workflow                       |
+| `build.md`               | Building and packaging                     |
+| `architecture.md`        | Project architecture                       |
+| `settings.md`            | Settings and download options              |
+| `download-engine.md`     | Queue, progress, retries and phases        |
+| `metadata-engine.md`     | Metadata detection, ranking and caching    |
+| `desktop-integration.md` | Tray, clipboard, notifications and updater |
+| `troubleshooting.md`     | Common problems and solutions              |
+| `faq.md`                 | Frequently asked questions                 |
+
+---
+
+# 🩹 Troubleshooting
+
+If a download fails immediately, the first thing to check is whether `yt-dlp` and `ffmpeg` are correctly installed and detected.
 
 You can inspect the detected versions and technical information from:
 
-Settings → Developer → Diagnostics
+**Settings → Developer → Diagnostics**
 
 For more detailed troubleshooting, see:
 
-docs/troubleshooting.md
+`docs/troubleshooting.md`
 
-🗺️ Roadmap
+---
+
+# 🗺️ Roadmap
 
 These are planned directions supported by the current project structure.
 
-They are not presented as implemented features.
+> These are **not presented as implemented features**.
 
- Bundle yt-dlp and ffmpeg as application sidecars
- Enable the automatic updater
- Add first-class playlist downloading
-🤝 Contributing
+* Bundle `yt-dlp` and `ffmpeg` as application sidecars
+* Enable the automatic updater
+* Add first-class playlist downloading
+
+---
+
+# 🤝 Contributing
 
 Contributions are welcome.
 
 If you want to contribute, please read:
 
-CONTRIBUTING.md
+`CONTRIBUTING.md`
 
 Before submitting changes, make sure the project passes its checks:
 
+```bash
 pnpm check
-🔐 Security
+```
+
+---
+
+# 🔐 Security
 
 If you discover a security vulnerability, please follow the instructions in:
 
-SECURITY.md
+`SECURITY.md`
 
-📄 License
+---
+
+# 📄 License
 
 This project is licensed under the MIT License.
 
-See LICENSE for the full license text.
+See `LICENSE` for the full license text.
 
 © 2026 Kai
 
-❤️ About
-<div align="center"> <img src="docs/assets/cor.png" alt="Made with love" width="260" /> <br /> <br /> <h2>Made with ❤️ and a lot of love for detail.</h2> <p> Universal Downloader started as a project to make downloading media <br /> feel less complicated, more intuitive and much more enjoyable. </p> <p> Every part of the application — from the interface and animations <br /> to the download engine and desktop integrations — was built <br /> with the goal of creating something that feels genuinely nice to use. </p> <br />
+---
+
+# ❤️ About
+
+<div align="center">
+
+<img src="docs/assets/cor.png" alt="Made with love" width="260" />
+
+<br />
+<br />
+
+<h2>Made with ❤️ and a lot of love for detail.</h2>
+
+<p>
+Universal Downloader started as a project to make downloading media
+<br />
+feel less complicated, more intuitive and much more enjoyable.
+</p>
+
+<p>
+Every part of the application — from the interface and animations
+<br />
+to the download engine and desktop integrations — was built
+<br />
+with the goal of creating something that feels genuinely nice to use.
+</p>
+
+<br />
 
 <strong>Built by Kai.</strong>
 
-<br /> <br /> <p> 🌸 Designed with inspiration from Tokyo<br /> ⚡ Built with modern technologies<br /> ❤️ Made with a lot of care </p> </div>
+<br />
+<br />
+
+<p>
+🌸 Designed with inspiration from Tokyo
+<br />
+⚡ Built with modern technologies
+<br />
+❤️ Made with a lot of care
+</p>
+
+</div>
+
+---
+
 <div align="center">
 
 <strong>Universal Downloader</strong>
@@ -625,8 +740,9 @@ See LICENSE for the full license text.
 
 Download anything. Simply.
 
-<br /> <br />
+<br />
+<br />
 
 <sub>Made with ❤️ by Kai · 2026</sub>
 
-</div> ```
+</div>
