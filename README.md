@@ -6,13 +6,9 @@
 
   <p><strong>Download anything. Simply.</strong></p>
   <p>A beautiful, fast and modern desktop downloader for video and audio from the web.</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/No_Ads-ff2d90.svg" alt="No Ads" />
-  <img src="https://img.shields.io/badge/No_Limits-ec4899.svg" alt="No Limits" />
-  <img src="https://img.shields.io/badge/All_Platforms-d6249f.svg" alt="All Platforms" />
-  <img src="https://img.shields.io/badge/Infinite_Downloads-c026d3.svg" alt="Infinite Downloads" />
-  <img src="https://img.shields.io/badge/Maximum_Quality-a21caf.svg" alt="Maximum Quality" />
-</p>
+  <div align="center">
+  <strong>No Ads</strong> &nbsp;•&nbsp; <strong>No Limits</strong> &nbsp;•&nbsp; <strong>All Platforms</strong> &nbsp;•&nbsp; <strong>Infinite Downloads</strong> &nbsp;•&nbsp; <strong>Maximum Quality</strong> &nbsp;🌸✨
+</div>
   <br />
 
 <img src="https://img.shields.io/badge/%F0%9F%8C%B8_Tokyo-night-ff2d90.svg" alt="Tokyo night" />
