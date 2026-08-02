@@ -22,7 +22,7 @@ jobs:
     name: Formatting
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -43,7 +43,7 @@ jobs:
     name: Test coverage
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -71,7 +71,7 @@ jobs:
     name: Code hygiene
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Fail if TODO/FIXME/HACK markers slip into shipped source. Comments in
       # workflows or docs are fine; we only scan app source.
